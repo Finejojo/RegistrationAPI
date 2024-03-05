@@ -1,11 +1,17 @@
-﻿namespace RegistrationAPI.DTO
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace RegistrationAPI.DTO
 {
     public class UserDTO
     {
-        public int Id { get; set; }
-        public String? FullName { get; set; }
-        public String? Email { get; set; }
-        public String? Phone { get; set; }
-        public String? Password { get; set; }
+       
+        [Required]
+        public string FullName { get; set; }
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        public string Phone { get; set; }
+        [Required]
+        public string Password { get; set; }
     }
 }
