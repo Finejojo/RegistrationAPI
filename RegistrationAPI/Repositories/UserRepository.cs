@@ -73,9 +73,9 @@ namespace RegistrationAPI.Repositories
             };
         }
 
-        public async Task<ApiResponse<User>> GetProfileAsync(GetProfile getProfile)
+        public async Task<ApiResponse<User>> GetProfileAsync(string phone)
         {
-            var profile = await _context.Users.FirstOrDefaultAsync(u => u.Phone == getProfile.Phone);
+            var profile = await _context.Users.FirstOrDefaultAsync(u => u.Phone == phone);
 
            if(profile != null)
             {

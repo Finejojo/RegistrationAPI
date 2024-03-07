@@ -15,7 +15,7 @@ namespace RegistrationAPI.Controllers
         {
             _userRepository = userRepository;
         }
-   
+
 
         // POST api/<UserController>
         [HttpPost("register")]
@@ -30,7 +30,7 @@ namespace RegistrationAPI.Controllers
         }
 
 
-        
+
         [HttpPost("login")]
         public async Task<IActionResult> UserLogin([FromBody] LoginDTO loginDTO)
         {
@@ -42,10 +42,10 @@ namespace RegistrationAPI.Controllers
 
         }
 
-        [HttpGet("profile")]
-        public async Task<IActionResult> GetProfileAsync(GetProfile getProfile)
+        [HttpGet("profile/{phone}")]
+        public async Task<IActionResult> GetProfileAsync(string phone)
         {
-            var getUser = await _userRepository.GetProfileAsync(getProfile);
+            var getUser = await _userRepository.GetProfileAsync(phone);
 
             if (getUser.Success == true)
                 return Ok(getUser);

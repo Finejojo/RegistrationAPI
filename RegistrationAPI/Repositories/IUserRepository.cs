@@ -7,6 +7,6 @@ namespace RegistrationAPI.Repositories
     {
         Task<ApiResponse<UserDTO>> RegisterAsync(UserDTO userDTO);
         Task<ApiResponse<string>> LoginAsync(LoginDTO loginDTO);
-        Task<ApiResponse<User>> GetProfileAsync(GetProfile getProfile);
+        Task<ApiResponse<User>> GetProfileAsync(string phone);
     }
 }
