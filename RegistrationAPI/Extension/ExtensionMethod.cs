@@ -12,10 +12,10 @@ namespace RegistrationAPI.Extension
         {
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IExternalCall, ExternalCall>();
-            services.AddDbContext<AppDbContext>(o =>
-            {
-                o.UseInMemoryDatabase(configuration.GetConnectionString("MyConnection"));
-            });
+            //services.AddDbContext<AppDbContext>(o =>
+            //{
+            //    o.UseInMemoryDatabase(configuration.GetConnectionString("MyConnection"));
+            //});
         }
 
     }
